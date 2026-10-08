@@ -310,43 +310,43 @@ function initAudioPlayer() {
         {
             title: "Regálame tu Amor",
             artist: "Walter Flores",
-            art: "public/WhatsApp Image 2026-07-01 at 8.17.10 AM.jpeg",
-            url: "public/Regalame tu amor - Walter Flores.mp3",
+            art: "WhatsApp Image 2026-07-01 at 8.17.10 AM.jpeg",
+            url: "Regalame tu amor - Walter Flores.mp3",
             chordProgressions: [[220, 261, 329, 440], [293, 349, 440, 587], [196, 246, 293, 392], [261, 329, 392, 523]]
         },
         {
             title: "En el Contestador",
             artist: "Walter Flores",
-            art: "public/Pulsaressalsa portada.png",
-            url: "public/1 EN EL CONTESTADOR.mp3.mpeg",
+            art: "Pulsaressalsa portada.png",
+            url: "1 EN EL CONTESTADOR.mp3.mpeg",
             chordProgressions: [[220, 261, 329, 440], [293, 349, 440, 587], [196, 246, 293, 392], [261, 329, 392, 523]]
         },
         {
             title: "Todo Comenzó para Siempre",
             artist: "Walter Flores",
-            art: "public/Pulsaressalsa portada.png",
-            url: "public/2 TODO COMENZO PARA SIEMPRE.mp3.mpeg",
+            art: "Pulsaressalsa portada.png",
+            url: "2 TODO COMENZO PARA SIEMPRE.mp3.mpeg",
             chordProgressions: [[220, 261, 329, 440], [293, 349, 440, 587], [196, 246, 293, 392], [261, 329, 392, 523]]
         },
         {
             title: "Embustera",
             artist: "Walter Flores",
-            art: "public/Pulsaressalsa portada.png",
-            url: "public/3 EMBUSTERA.mp3.mpeg",
+            art: "Pulsaressalsa portada.png",
+            url: "3 EMBUSTERA.mp3.mpeg",
             chordProgressions: [[220, 261, 329, 440], [293, 349, 440, 587], [196, 246, 293, 392], [261, 329, 392, 523]]
         },
         {
             title: "Diosa del Mar",
             artist: "Walter Flores",
-            art: "public/Pulsaressalsa portada.png",
-            url: "public/4 DIOSA DEL MAR.mp3 (1).mpeg",
+            art: "Pulsaressalsa portada.png",
+            url: "4 DIOSA DEL MAR.mp3 (1).mpeg",
             chordProgressions: [[220, 261, 329, 440], [293, 349, 440, 587], [196, 246, 293, 392], [261, 329, 392, 523]]
         },
         {
             title: "Mirar al Cielo",
             artist: "Walter Flores",
-            art: "public/Pulsaressalsa portada.png",
-            url: "public/5 MIRAR AL CIELO.mp3.mpeg",
+            art: "Pulsaressalsa portada.png",
+            url: "5 MIRAR AL CIELO.mp3.mpeg",
             chordProgressions: [[220, 261, 329, 440], [293, 349, 440, 587], [196, 246, 293, 392], [261, 329, 392, 523]]
         }
     ];
@@ -357,7 +357,9 @@ function initAudioPlayer() {
     let isSynthMode = false; // Attempt playing real MP3 files by default, fallback to synth on CORS
     
     // Audio elements
-    const audioEl = new Audio(); // No crossOrigin set for reliable same-origin local playback
+        const audioEl = new Audio(); // Local same-origin playback does not require crossOrigin.
+        audioEl.preload = "metadata";
+
     
     // DOM bindings
     const playerContainer = document.querySelector(".premium-player-container");
@@ -506,7 +508,7 @@ function initAudioPlayer() {
         playBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
         
         const track = tracks[currentTrackIndex];
-        const isLocalFile = track.url.includes("public/") || track.url.endsWith(".mp3");
+        const isLocalFile = track.url.includes("") || track.url.endsWith(".mp3");
         
         if (isLocalFile) {
             isSynthMode = false;
@@ -564,7 +566,7 @@ function initAudioPlayer() {
         trackTitle.textContent = track.title;
         trackArtist.textContent = track.artist;
         
-        const isLocalFile = track.url.includes("public/") || track.url.endsWith(".mp3");
+        const isLocalFile = track.url.includes("") || track.url.endsWith(".mp3");
         if (isLocalFile) {
             sourceBadge.textContent = "AUDIO MP3";
             sourceBadge.style.color = "var(--argentine-blue)";
@@ -824,7 +826,7 @@ function initVideoSlider() {
         card.addEventListener("click", () => {
             const url = card.getAttribute("data-video-url");
             
-            if (url.toLowerCase().endsWith(".mp4") || url.toLowerCase().includes("public/")) {
+            if (url.toLowerCase().endsWith(".mp4") || url.toLowerCase().includes("")) {
                 // Play local video using HTML5 video player
                 lightboxIframe.style.display = "none";
                 lightboxVideo.style.display = "block";
@@ -941,12 +943,18 @@ function initForms() {
             submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Procesando Solicitud...';
             submitBtn.disabled = true;
 
-            // Simulate booking validation
+            // This static site confirms the request locally without a backend endpoint.
             setTimeout(() => {
-                gsap.to(bookingForm, { opacity: 0, duration: 0.4, display: "none" });
+                if (typeof gsap !== "undefined") {
+                    gsap.to(bookingForm, { opacity: 0, duration: 0.4, display: "none" });
+                } else {
+                    bookingForm.style.display = "none";
+                }
                 setTimeout(() => {
                     bookingSuccess.style.display = "block";
-                    gsap.fromTo(bookingSuccess, { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.6 });
+                    if (typeof gsap !== "undefined") {
+                        gsap.fromTo(bookingSuccess, { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.6 });
+                    }
                 }, 400);
             }, 2000);
         });
@@ -958,11 +966,16 @@ function initForms() {
                 bookingForm.querySelector("button[type='submit']").innerHTML = '<span class="btn-text">Enviar Solicitud de Reserva</span> <i class="fa-solid fa-paper-plane"></i>';
                 bookingForm.querySelector("button[type='submit']").disabled = false;
                 
-                gsap.to(bookingSuccess, { opacity: 0, duration: 0.4, onComplete: () => {
+                const restoreForm = () => {
                     bookingSuccess.style.display = "none";
                     bookingForm.style.display = "block";
-                    gsap.to(bookingForm, { opacity: 1, duration: 0.4 });
-                }});
+                    bookingForm.style.opacity = "1";
+                };
+                if (typeof gsap !== "undefined") {
+                    gsap.to(bookingSuccess, { opacity: 0, duration: 0.4, onComplete: restoreForm });
+                } else {
+                    restoreForm();
+                }
             });
         }
     }
@@ -992,6 +1005,7 @@ function initNavbarScroll() {
     });
 
     // Mobile Hamburger Menu Action
+    if (!mobileToggle || !navMenu) return;
     mobileToggle.addEventListener("click", () => {
         mobileToggle.classList.toggle("active");
         navMenu.classList.toggle("open");
