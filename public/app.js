@@ -826,7 +826,7 @@ function initVideoSlider() {
         card.addEventListener("click", () => {
             const url = card.getAttribute("data-video-url");
             
-            if (url.toLowerCase().endsWith(".mp4") || url.toLowerCase().includes("")) {
+            if (url.toLowerCase().endsWith(".mp4")) {
                 // Play local video using HTML5 video player
                 lightboxIframe.style.display = "none";
                 lightboxVideo.style.display = "block";
