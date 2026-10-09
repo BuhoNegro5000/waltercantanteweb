@@ -12,7 +12,7 @@
     <meta property="og:title" content="Walter Flores | Sitio Oficial">
     <meta property="og:description" content="De Argentina para el Mundo. Experimenta el universo musical del cantante argentino Walter Flores.">
     <meta property="og:type" content="music.musician">
-    <meta property="og:image" content="public/WhatsApp Image 2026-07-01 at 8.26.00 AM.jpeg">
+    <meta property="og:image" content="/public/WhatsApp Image 2026-07-01 at 8.26.00 AM.jpeg">
     <meta name="twitter:card" content="summary_large_image">
 
     <!-- Fonts & Icons -->
@@ -78,10 +78,10 @@
         <div class="hero-video-container">
             <!-- Background Video - Regálame Tu Amor by Walter Flores -->
             <video class="hero-video" autoplay loop muted playsinline id="hero-bg-video">
-                <source src="public/REGALAME TU AMOR - WALTER FLORES.mp4" type="video/mp4">
+                <source src="/public/REGALAME TU AMOR - WALTER FLORES.mp4" type="video/mp4">
             </video>
             <!-- High-quality image fallback overlay in case video doesn't load/play -->
-            <div class="hero-fallback-slideshow" style="background-image: linear-gradient(to bottom, rgba(8,8,8,0.3), rgba(8,8,8,0.95)), url('public/WhatsApp Image 2026-07-01 at 8.26.00 AM.jpeg');"></div>
+            <div class="hero-fallback-slideshow" style="background-image: linear-gradient(to bottom, rgba(8,8,8,0.3), rgba(8,8,8,0.95)), url('/public/WhatsApp Image 2026-07-01 at 8.26.00 AM.jpeg');"></div>
         </div>
 
         <div class="hero-overlay"></div>
@@ -129,7 +129,7 @@
             <div class="story-grid">
                 <div class="story-image-wrapper reveal-left">
                     <div class="story-photo-frame">
-                        <img src="public/WhatsApp Image 2026-07-01 at 8.26.02 AM.jpeg" alt="Walter Flores en el escenario" class="story-photo">
+                        <img src="/public/WhatsApp Image 2026-07-01 at 8.26.02 AM.jpeg" alt="Walter Flores en el escenario" class="story-photo">
                         <div class="photo-overlay-glow"></div>
                     </div>
                     <div class="story-badge-floating">
@@ -177,7 +177,7 @@
                 <div class="player-grid">
                     <div class="player-now-playing">
                         <div class="player-album-art">
-                            <img src="public/WhatsApp Image 2026-07-01 at 8.17.10 AM.jpeg" alt="Portada de álbum" id="player-art-img">
+                            <img src="/public/WhatsApp Image 2026-07-01 at 8.17.10 AM.jpeg" alt="Portada de álbum" id="player-art-img">
                             <div class="art-pulse-ring"></div>
                         </div>
                         <div class="player-track-info">
@@ -218,9 +218,9 @@
             <!-- Album Cards Grid -->
             <div class="albums-grid">
                  <!-- Album 1: Pulsares Salsa -->
-                <div class="album-card reveal-up" data-track-index="1" data-audio-src="public/1 EN EL CONTESTADOR.mp3.mpeg">
+                <div class="album-card reveal-up" data-track-index="1" data-audio-src="/public/1 EN EL CONTESTADOR.mp3.mpeg">
                     <div class="album-img-container">
-                        <img src="public/Pulsaressalsa portada.png" alt="Álbum Pulsares Salsa" class="album-img">
+                        <img src="/public/Pulsaressalsa portada.png" alt="Álbum Pulsares Salsa" class="album-img">
                         <div class="album-hover-overlay">
                             <span class="album-play-icon"><i class="fa-solid fa-circle-play"></i></span>
                             <span class="album-play-label">Escuchar Álbum</span>
@@ -252,9 +252,9 @@
                 </div>
 
                 <!-- Album 2: Regálame tu Amor -->
-                <div class="album-card reveal-up" data-track-index="0" data-audio-src="public/Regalame tu amor - Walter Flores.mp3" style="--card-delay: 0.15s;">
+                <div class="album-card reveal-up" data-track-index="0" data-audio-src="/public/Regalame tu amor - Walter Flores.mp3" style="--card-delay: 0.15s;">
                     <div class="album-img-container">
-                        <img src="public/WhatsApp Image 2026-07-01 at 8.17.10 AM.jpeg" alt="Sencillo Regálame tu Amor" class="album-img">
+                        <img src="/public/WhatsApp Image 2026-07-01 at 8.17.10 AM.jpeg" alt="Sencillo Regálame tu Amor" class="album-img">
                         <div class="album-hover-overlay">
                             <span class="album-play-icon"><i class="fa-solid fa-circle-play"></i></span>
                             <span class="album-play-label">Escuchar Sencillo</span>
@@ -276,9 +276,9 @@
                 </div>
 
                 <!-- Album 3: Diosa del Mar -->
-                <div class="album-card reveal-up" data-track-index="4" data-audio-src="public/4 DIOSA DEL MAR.mp3 (1).mpeg" style="--card-delay: 0.3s;">
+                <div class="album-card reveal-up" data-track-index="4" data-audio-src="/public/4 DIOSA DEL MAR.mp3 (1).mpeg" style="--card-delay: 0.3s;">
                     <div class="album-img-container">
-                        <img src="public/Pulsaressalsa portada.png" alt="Sencillo Diosa del Mar" class="album-img">
+                        <img src="/public/Pulsaressalsa portada.png" alt="Sencillo Diosa del Mar" class="album-img">
                         <div class="album-hover-overlay">
                             <span class="album-play-icon"><i class="fa-solid fa-circle-play"></i></span>
                             <span class="album-play-label">Escuchar Tema</span>
@@ -323,10 +323,18 @@
                 <!-- SVG Interactive World Map with custom styled nodes -->
                 <div class="svg-map-wrapper">
                     <svg viewBox="0 0 1000 500" class="world-svg-map" id="world-map">
-                        <!-- Simple Stylized Outlines of continents -->
-                        <rect width="100%" height="100%" fill="none" />
-                        
-                        <!-- Connecting Trajectory Arcs (glowing lines) -->
+  <!-- Continentes estilizados para dar contexto geográfico a la ruta -->
+  <g class="map-landmasses" aria-hidden="true">
+  <path d="M126 112l30-18 44 8 28 28-18 24-34 4-20 25-28-12-18-28z" />
+  <path d="M246 228l30 22 18 42-14 52-24 36-12 46-24 28-18-42 10-50-8-42 18-28z" />
+  <path d="M430 116l38-18 56 8 36 24-18 20-42-4-20 18-34-12z" />
+  <path d="M474 190l42 8 30 28-18 22-34-6-30-24z" />
+  <path d="M612 148l54-18 72 12 48 30-22 26-52-8-40 18-42-20z" />
+  <path d="M748 250l42 8 32 34-20 28-44-4-26-24z" />
+  <path d="M816 358l34 12 22 24-18 20-38-10-18-20z" />
+  </g>
+
+  <!-- Connecting Trajectory Arcs (glowing lines) -->
                         <path d="M 340,392 Q 280,260 270,180" class="map-connection-line line-miami" />
                         <path d="M 340,392 Q 200,280 200,200" class="map-connection-line line-mexico" />
                         <path d="M 340,392 Q 420,240 500,160" class="map-connection-line line-madrid" />
@@ -415,9 +423,9 @@
                 <div class="netflix-slider-inner">
                     
                     <!-- Video Card 1 -->
-                    <div class="video-card" data-video-url="public/REGALAME TU AMOR - WALTER FLORES.mp4">
+                    <div class="video-card" data-video-url="/public/REGALAME TU AMOR - WALTER FLORES.mp4">
                         <div class="video-thumbnail-container">
-                            <img src="public/WhatsApp Image 2026-07-01 at 8.17.11 AM.jpeg" alt="Regálame tu Amor - Videoclip" class="video-thumbnail">
+                            <img src="/public/WhatsApp Image 2026-07-01 at 8.17.11 AM.jpeg" alt="Regálame tu Amor - Videoclip" class="video-thumbnail">
                             <div class="video-duration">03:52</div>
                             <div class="video-overlay-play">
                                 <span class="play-ring"><i class="fa-solid fa-play"></i></span>
@@ -431,9 +439,9 @@
                     </div>
 
                     <!-- Video Card 2 -->
-                    <div class="video-card" data-video-url="public/4 DIOSA DEL MAR - W.FLORES.mp4">
+                    <div class="video-card" data-video-url="4 DIOSA DEL MAR - W.FLORES.mp4">
                         <div class="video-thumbnail-container">
-                            <img src="public/WhatsApp Image 2026-07-01 at 8.17.11 AM (1).jpeg" alt="Diosa del Mar" class="video-thumbnail">
+                            <img src="/public/WhatsApp Image 2026-07-01 at 8.17.11 AM (1).jpeg" alt="Diosa del Mar" class="video-thumbnail">
                             <div class="video-duration">04:15</div>
                             <div class="video-overlay-play">
                                 <span class="play-ring"><i class="fa-solid fa-play"></i></span>
@@ -447,9 +455,9 @@
                     </div>
 
                     <!-- Video Card 3 -->
-                    <div class="video-card" data-video-url="public/waltervideo.mp4">
+                    <div class="video-card" data-video-url="waltervideo.mp4">
                         <div class="video-thumbnail-container">
-                            <img src="public/WhatsApp Image 2026-07-01 at 8.17.11 AM (2).jpeg" alt="Walter Flores - Sesión Especial" class="video-thumbnail">
+                            <img src="/public/WhatsApp Image 2026-07-01 at 8.17.11 AM (2).jpeg" alt="Walter Flores - Sesión Especial" class="video-thumbnail">
                             <div class="video-duration">04:05</div>
                             <div class="video-overlay-play">
                                 <span class="play-ring"><i class="fa-solid fa-play"></i></span>
@@ -465,7 +473,7 @@
                     <!-- Video Card 4 -->
                     <div class="video-card" data-video-url="https://www.youtube.com/embed/dQw4w9WgXcQ">
                         <div class="video-thumbnail-container">
-                            <img src="public/WhatsApp Image 2026-07-01 at 8.18.11 AM.jpeg" alt="Concierto al Aire Libre" class="video-thumbnail">
+                            <img src="/public/WhatsApp Image 2026-07-01 at 8.18.11 AM.jpeg" alt="Concierto al Aire Libre" class="video-thumbnail">
                             <div class="video-duration">06:15</div>
                             <div class="video-overlay-play">
                                 <span class="play-ring"><i class="fa-solid fa-play"></i></span>
@@ -481,7 +489,7 @@
                     <!-- Video Card 5 -->
                     <div class="video-card" data-video-url="https://www.youtube.com/embed/dQw4w9WgXcQ">
                         <div class="video-thumbnail-container">
-                            <img src="public/WhatsApp Image 2026-07-01 at 8.18.11 AM (1).jpeg" alt="Entrevista y música" class="video-thumbnail">
+                            <img src="/public/WhatsApp Image 2026-07-01 at 8.18.11 AM (1).jpeg" alt="Entrevista y música" class="video-thumbnail">
                             <div class="video-duration">08:30</div>
                             <div class="video-overlay-play">
                                 <span class="play-ring"><i class="fa-solid fa-play"></i></span>
@@ -511,8 +519,8 @@
             <div class="masonry-grid reveal-up">
                 
                 <!-- Grid Item 1 -->
-                <div class="masonry-item item-vertical" data-image-src="public/WhatsApp Image 2026-07-01 at 8.26.00 AM.jpeg" data-caption="Retrato Editorial, Sesión Oficial 2026">
-                    <img src="public/WhatsApp Image 2026-07-01 at 8.26.00 AM.jpeg" alt="Walter Flores - Sesión de Fotos" class="masonry-img">
+                <div class="masonry-item item-vertical" data-image-src="/public/WhatsApp Image 2026-07-01 at 8.26.00 AM.jpeg" data-caption="Retrato Editorial, Sesión Oficial 2026">
+                    <img src="/public/WhatsApp Image 2026-07-01 at 8.26.00 AM.jpeg" alt="Walter Flores - Sesión de Fotos" class="masonry-img">
                     <div class="masonry-hover">
                         <div class="hover-content">
                             <span class="hover-tag">EDITORIAL</span>
@@ -523,8 +531,8 @@
                 </div>
 
                 <!-- Grid Item 2 -->
-                <div class="masonry-item item-horizontal" data-image-src="public/WhatsApp Image 2026-07-01 at 8.26.01 AM.jpeg" data-caption="Walter Flores, la mirada de un viaje internacional">
-                    <img src="public/WhatsApp Image 2026-07-01 at 8.26.01 AM.jpeg" alt="Walter Flores - Perfil" class="masonry-img">
+                <div class="masonry-item item-horizontal" data-image-src="/public/WhatsApp Image 2026-07-01 at 8.26.01 AM.jpeg" data-caption="Walter Flores, la mirada de un viaje internacional">
+                    <img src="/public/WhatsApp Image 2026-07-01 at 8.26.01 AM.jpeg" alt="Walter Flores - Perfil" class="masonry-img">
                     <div class="masonry-hover">
                         <div class="hover-content">
                             <span class="hover-tag">PERFIL</span>
@@ -535,8 +543,8 @@
                 </div>
 
                 <!-- Grid Item 3 -->
-                <div class="masonry-item" data-image-src="public/WhatsApp Image 2026-07-01 at 8.18.11 AM (2).jpeg" data-caption="Concierto Acústico en Vivo">
-                    <img src="public/WhatsApp Image 2026-07-01 at 8.18.11 AM (2).jpeg" alt="Walter Flores - Tocando en vivo" class="masonry-img">
+                <div class="masonry-item" data-image-src="/public/WhatsApp Image 2026-07-01 at 8.18.11 AM (2).jpeg" data-caption="Concierto Acústico en Vivo">
+                    <img src="/public/WhatsApp Image 2026-07-01 at 8.18.11 AM (2).jpeg" alt="Walter Flores - Tocando en vivo" class="masonry-img">
                     <div class="masonry-hover">
                         <div class="hover-content">
                             <span class="hover-tag">CONCIERTO</span>
@@ -547,8 +555,8 @@
                 </div>
 
                 <!-- Grid Item 4 -->
-                <div class="masonry-item" data-image-src="public/WhatsApp Image 2026-07-01 at 8.17.10 AM (4).jpeg" data-caption="Estudio de Grabación, Buenos Aires 2025">
-                    <img src="public/WhatsApp Image 2026-07-01 at 8.17.10 AM (4).jpeg" alt="Walter Flores - Estudio de Grabación" class="masonry-img">
+                <div class="masonry-item" data-image-src="/public/WhatsApp Image 2026-07-01 at 8.17.10 AM (4).jpeg" data-caption="Estudio de Grabación, Buenos Aires 2025">
+                    <img src="/public/WhatsApp Image 2026-07-01 at 8.17.10 AM (4).jpeg" alt="Walter Flores - Estudio de Grabación" class="masonry-img">
                     <div class="masonry-hover">
                         <div class="hover-content">
                             <span class="hover-tag">ESTUDIO</span>
@@ -559,8 +567,8 @@
                 </div>
 
                 <!-- Grid Item 5 -->
-                <div class="masonry-item item-vertical" data-image-src="public/WhatsApp Image 2026-07-01 at 8.17.10 AM (5).jpeg" data-caption="Sesión Promocional, Álbum de Argentina para el Mundo">
-                    <img src="public/WhatsApp Image 2026-07-01 at 8.17.10 AM (5).jpeg" alt="Walter Flores - Promocional" class="masonry-img">
+                <div class="masonry-item item-vertical" data-image-src="/public/WhatsApp Image 2026-07-01 at 8.17.10 AM (5).jpeg" data-caption="Sesión Promocional, Álbum de Argentina para el Mundo">
+                    <img src="/public/WhatsApp Image 2026-07-01 at 8.17.10 AM (5).jpeg" alt="Walter Flores - Promocional" class="masonry-img">
                     <div class="masonry-hover">
                         <div class="hover-content">
                             <span class="hover-tag">PROMO</span>
@@ -571,8 +579,8 @@
                 </div>
 
                 <!-- Grid Item 6 -->
-                <div class="masonry-item item-horizontal" data-image-src="public/WhatsApp Image 2026-07-01 at 8.17.10 AM (2).jpeg" data-caption="Emoción pura en el escenario del Teatro Real, Madrid">
-                    <img src="public/WhatsApp Image 2026-07-01 at 8.17.10 AM (2).jpeg" alt="Walter Flores - Presentación" class="masonry-img">
+                <div class="masonry-item item-horizontal" data-image-src="/public/WhatsApp Image 2026-07-01 at 8.17.10 AM (2).jpeg" data-caption="Emoción pura en el escenario del Teatro Real, Madrid">
+                    <img src="/public/WhatsApp Image 2026-07-01 at 8.17.10 AM (2).jpeg" alt="Walter Flores - Presentación" class="masonry-img">
                     <div class="masonry-hover">
                         <div class="hover-content">
                             <span class="hover-tag">ESCENARIO</span>
@@ -623,75 +631,36 @@
                                     <span class="item-val">Mar del Plata, Argentina | Conexiones a nivel global</span>
                                 </div>
                             </div>
-                        </div>
+  </div>
 
-                        <!-- Mic Ornament Graphic -->
-                        <div class="mic-ornament">
+  <div class="contact-socials">
+  <span class="item-label">Redes oficiales</span>
+  <div class="contact-social-links">
+  <a href="https://www.tiktok.com/@walter.furor" target="_blank" rel="noopener noreferrer" aria-label="TikTok oficial de Walter Flores"><i class="fa-brands fa-tiktok"></i><span>TikTok</span></a>
+  <a href="https://www.youtube.com/@walter.cantante" target="_blank" rel="noopener noreferrer" aria-label="YouTube oficial de Walter Flores"><i class="fa-brands fa-youtube"></i><span>YouTube</span></a>
+  <a href="https://www.instagram.com/walter.furor" target="_blank" rel="noopener noreferrer" aria-label="Instagram oficial de Walter Flores"><i class="fa-brands fa-instagram"></i><span>Instagram</span></a>
+  </div>
+  </div>
+
+  <!-- Mic Ornament Graphic -->
+  <div class="mic-ornament">
                             <i class="fa-solid fa-microphone-lines"></i>
                         </div>
                     </div>
                 </div>
 
                 <div class="booking-form-panel reveal-right">
-                    <form id="booking-contact-form" class="luxury-form">
-                        <div class="form-row-two">
-                            <div class="form-group-glow">
-                                <input type="text" id="contact-name" name="name" required placeholder=" ">
-                                <label for="contact-name">Nombre Completo</label>
-                                <span class="input-glow-line"></span>
-                            </div>
-                            <div class="form-group-glow">
-                                <input type="email" id="contact-email" name="email" required placeholder=" ">
-                                <label for="contact-email">Correo de Contacto</label>
-                                <span class="input-glow-line"></span>
-                            </div>
-                        </div>
-
-                        <div class="form-row-two">
-                            <div class="form-group-glow">
-                                <input type="text" id="contact-company" name="company" placeholder=" ">
-                                <label for="contact-company">Empresa / Productora</label>
-                                <span class="input-glow-line"></span>
-                            </div>
-                            <div class="form-group-glow select-glow">
-                                <select id="contact-type" name="event-type" required>
-                                    <option value="" disabled selected hidden></option>
-                                    <option value="festival">Festival o Recinto Público</option>
-                                    <option value="private">Show Privado o Gala</option>
-                                    <option value="corporate">Evento Corporativo</option>
-                                    <option value="media">Prensa / Entrevista</option>
-                                    <option value="other">Otro</option>
-                                </select>
-                                <label for="contact-type" class="select-label">Tipo de Evento</label>
-                                <span class="input-glow-line"></span>
-                                <i class="fa-solid fa-chevron-down select-chevron"></i>
-                            </div>
-                        </div>
-
-                        <div class="form-group-glow">
-                            <input type="text" id="contact-location" name="location" required placeholder=" ">
-                            <label for="contact-location">Ciudad y País de Destino</label>
-                            <span class="input-glow-line"></span>
-                        </div>
-
-                        <div class="form-group-glow text-area-glow">
-                            <textarea id="contact-message" name="message" rows="5" required placeholder=" "></textarea>
-                            <label for="contact-message">Detalles del Evento, Fechas propuestas y Requerimientos</label>
-                            <span class="input-glow-line"></span>
-                        </div>
-
-                        <button type="submit" class="submit-btn-glow btn-submit-main">
-                            <span class="btn-text">Enviar Solicitud de Reserva</span>
-                            <i class="fa-solid fa-paper-plane"></i>
-                        </button>
-                    </form>
-
-                    <!-- Contact Form Success Message -->
-                    <div class="form-success-alert" id="contact-success-alert">
-                        <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
-                        <h3>Mensaje Recibido con Éxito</h3>
-                        <p>Agradecemos tu propuesta. Nuestro equipo de management se comunicará contigo en un plazo máximo de 24 horas hábiles para coordinar los detalles técnicos y disponibilidad de fechas.</p>
-                        <button class="btn-outline-white reset-form-btn" id="reset-contact-btn">Volver a Escribir</button>
+                    <div class="whatsapp-contact-card">
+                        <div class="whatsapp-card-orbit" aria-hidden="true"><i class="fa-brands fa-whatsapp"></i></div>
+                        <span class="whatsapp-eyebrow">Hablemos de tu próximo show</span>
+                        <h3>Tu evento merece<br><span>una voz inolvidable.</span></h3>
+                        <p>Cuéntanos la fecha, la ciudad y el tipo de celebración. El equipo de Walter Flores te responderá directamente por WhatsApp.</p>
+                        <a class="whatsapp-direct-btn" href="https://wa.link/j0bcev" target="_blank" rel="noopener noreferrer">
+                            <span class="whatsapp-direct-icon"><i class="fa-brands fa-whatsapp"></i></span>
+                            <span class="whatsapp-direct-copy"><strong>Contactar por WhatsApp</strong><small>Respuesta directa del equipo</small></span>
+                            <i class="fa-solid fa-arrow-up-right-from-square whatsapp-arrow" aria-hidden="true"></i>
+                        </a>
+                        <div class="whatsapp-card-note"><i class="fa-solid fa-bolt"></i> Contrataciones, prensa y eventos internacionales</div>
                     </div>
                 </div>
             </div>
@@ -724,11 +693,9 @@
                 <div class="footer-social-block">
                     <h4>Conecta con Walter</h4>
                     <div class="footer-socials">
-                        <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="https://www.youtube.com/@walter.cantante" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                        <a href="https://open.spotify.com" target="_blank" aria-label="Spotify"><i class="fa-brands fa-spotify"></i></a>
-                        <a href="https://tiktok.com" target="_blank" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+  <a href="https://www.instagram.com/walter.furor" target="_blank" rel="noopener noreferrer" aria-label="Instagram oficial"><i class="fa-brands fa-instagram"></i></a>
+  <a href="https://www.youtube.com/@walter.cantante" target="_blank" rel="noopener noreferrer" aria-label="YouTube oficial"><i class="fa-brands fa-youtube"></i></a>
+  <a href="https://www.tiktok.com/@walter.furor" target="_blank" rel="noopener noreferrer" aria-label="TikTok oficial"><i class="fa-brands fa-tiktok"></i></a>
                     </div>
                     <p class="copyright">&copy; 2026 Walter Flores. Todos los derechos reservados. Diseñado bajo el concepto premium de la música nacional.</p>
                 </div>

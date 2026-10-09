@@ -28,6 +28,7 @@
     --text-white: #1A1817; /* Dark Charcoal (primary body text) */
     --text-gray: #4A4744;  /* Mid-Charcoal (description text) */
     --text-muted: #7A7570; /* Sand Muted */
+    --text-on-dark: #FFFFFF; /* Text used on dark feature surfaces */
     
     /* Effects */
     --transition-premium: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1610,12 +1611,17 @@ img {
     font-family: var(--font-heading);
     font-size: 20px;
     font-weight: 700;
-    color: var(--text-white);
-}
+  color: var(--text-on-dark);
+  }
+  
+  .tour-details-body {
+  margin-bottom: 20px;
+  }
 
-.tour-details-body {
-    margin-bottom: 20px;
-}
+  .tour-details-card .tour-venue-container,
+  .tour-details-card .tour-date-container {
+  color: rgba(255, 255, 255, 0.82);
+  }
 
 .tour-venue-container, .tour-date-container {
     font-size: 13px;
@@ -2102,6 +2108,45 @@ img {
     flex-direction: column;
 }
 
+.contact-socials {
+    position: relative;
+    z-index: 1;
+    margin-top: 38px;
+    padding-top: 26px;
+    border-top: 1px solid rgba(255, 94, 58, 0.18);
+}
+
+.contact-social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.contact-social-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 12px;
+    border: 1px solid rgba(0, 176, 255, 0.22);
+    border-radius: 999px;
+    color: var(--text-gray);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.contact-social-links a:hover {
+    color: var(--text-white);
+    border-color: var(--gold-solid);
+    background: rgba(255, 94, 58, 0.08);
+    transform: translateY(-2px);
+}
+
+.contact-social-links i {
+    color: var(--gold-solid);
+    font-size: 15px;
+}
+
 .item-label {
     font-size: 11px;
     font-weight: 700;
@@ -2269,6 +2314,165 @@ img {
 
 @media (max-width: 576px) {
     .form-row-two { grid-template-columns: 1fr; gap: 0; }
+}
+
+  /* Contacto: panel cálido y legible sobre el fondo claro */
+  .whatsapp-contact-card {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 56px;
+  border: 1px solid rgba(255, 94, 58, 0.24);
+  border-radius: 20px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(255, 247, 239, 0.92));
+  box-shadow: 0 24px 60px rgba(82, 54, 34, 0.14);
+  }
+
+  .whatsapp-contact-card::before {
+  content: '';
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  right: -90px;
+  top: -100px;
+  border-radius: 50%;
+  background: rgba(37, 211, 102, 0.12);
+  filter: blur(4px);
+  }
+
+  .whatsapp-card-orbit {
+  width: 74px;
+  height: 74px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 28px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 34px;
+  background: #25d366;
+  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.28);
+  }
+
+  .whatsapp-eyebrow {
+  position: relative;
+  z-index: 1;
+  color: var(--gold-solid);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  }
+
+  .whatsapp-contact-card h3 {
+  position: relative;
+  z-index: 1;
+  margin: 10px 0 18px;
+  color: var(--text-white);
+  font-family: var(--font-heading);
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.05;
+  }
+
+  .whatsapp-contact-card h3 span { color: var(--gold-solid); }
+
+  .whatsapp-contact-card p {
+  position: relative;
+  z-index: 1;
+  max-width: 470px;
+  margin-bottom: 30px;
+  color: var(--text-gray);
+  font-size: 16px;
+  line-height: 1.7;
+  }
+
+  .whatsapp-direct-btn {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 16px 18px;
+  border: 1px solid rgba(37, 211, 102, 0.35);
+  border-radius: 14px;
+  color: #fff;
+  background: #168f49;
+  box-shadow: 0 14px 28px rgba(22, 143, 73, 0.2);
+  }
+
+  .whatsapp-direct-btn:hover { transform: translateY(-3px); background: #11783d; box-shadow: 0 18px 34px rgba(22, 143, 73, 0.28); }
+  .whatsapp-direct-icon { font-size: 26px; }
+  .whatsapp-direct-copy { display: flex; flex: 1; flex-direction: column; gap: 2px; }
+  .whatsapp-direct-copy strong { font-size: 15px; }
+  .whatsapp-direct-copy small { color: rgba(255, 255, 255, 0.78); font-size: 11px; }
+  .whatsapp-arrow { font-size: 14px; opacity: 0.8; }
+
+  .whatsapp-card-note {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  color: var(--text-muted);
+  font-size: 12px;
+  }
+
+  .whatsapp-card-note i { color: var(--gold-light); }
+
+  .booking-section {
+    background: linear-gradient(180deg, #fffaf4 0%, #f5eee5 100%);
+    position: relative;
+}
+
+.booking-section .section-subtitle {
+    color: #5f5147;
+}
+
+.info-card-premium,
+.luxury-form {
+    background: rgba(255, 255, 255, 0.92);
+    border-color: rgba(255, 94, 58, 0.28);
+    box-shadow: 0 20px 45px rgba(82, 54, 34, 0.12);
+}
+
+.luxury-form .form-group-glow input,
+.luxury-form .form-group-glow textarea,
+.luxury-form .form-group-glow select {
+    color: #1a1817;
+    border-bottom-color: rgba(95, 81, 71, 0.28);
+}
+
+.luxury-form .form-group-glow input::placeholder,
+.luxury-form .form-group-glow textarea::placeholder {
+    color: transparent;
+}
+
+.map-landmasses path {
+    fill: rgba(0, 176, 255, 0.08);
+    stroke: rgba(0, 119, 255, 0.28);
+    stroke-width: 2;
+    stroke-linejoin: round;
+}
+
+.svg-map-wrapper {
+    background: linear-gradient(145deg, #f4fbff 0%, #fff8f0 100%);
+    border-color: rgba(0, 176, 255, 0.28);
+    box-shadow: 0 22px 50px rgba(0, 119, 255, 0.1);
+}
+
+.world-svg-map {
+    min-height: 360px;
+}
+
+.map-city-label {
+    paint-order: stroke;
+    stroke: rgba(250, 247, 242, 0.9);
+    stroke-width: 4px;
+    stroke-linejoin: round;
 }
 
 /* ==========================================================================
