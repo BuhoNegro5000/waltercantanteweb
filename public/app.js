@@ -5,6 +5,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Initialize subsystems
     initPreloader();
+    initHeroVideo();
     initAuraBackdrop();
     initGSAPAnimations();
     initAudioPlayer();
@@ -14,6 +15,32 @@ document.addEventListener("DOMContentLoaded", () => {
     initForms();
     initNavbarScroll();
 });
+
+/* ==========================================================================
+   HERO VIDEO
+   ========================================================================== */
+function initHeroVideo() {
+    const heroVideo = document.getElementById("hero-bg-video");
+    if (!heroVideo) return;
+
+    heroVideo.src = "/waltervideo.mp4";
+    heroVideo.muted = true;
+    heroVideo.loop = true;
+    heroVideo.playsInline = true;
+    heroVideo.load();
+
+    const startPlayback = () => {
+        heroVideo.play().catch(() => {
+            heroVideo.classList.add("video-fallback-active");
+        });
+    };
+
+    heroVideo.addEventListener("canplay", startPlayback, { once: true });
+    heroVideo.addEventListener("error", () => {
+        heroVideo.classList.add("video-fallback-active");
+    }, { once: true });
+    startPlayback();
+}
 
 /* ==========================================================================
    1. PRELOADER
