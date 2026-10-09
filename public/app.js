@@ -235,7 +235,7 @@ function initGSAPAnimations() {
     gsap.to(".hero-video-container", {
         scrollTrigger: {
             trigger: ".hero-section",
-            start: "/public/top top",
+            start: "/top top",
             end: "bottom top",
             scrub: true
         },
@@ -258,7 +258,7 @@ function initGSAPAnimations() {
                 y: 0,
                 scrollTrigger: {
                     trigger: element,
-                    start: "/public/top 85%",
+                    start: "/top 85%",
                     toggleActions: "play none none none"
                 },
                 duration: 1.2,
@@ -271,7 +271,7 @@ function initGSAPAnimations() {
     gsap.to(".story-photo", {
         scrollTrigger: {
             trigger: ".story-section",
-            start: "/public/top bottom",
+            start: "/top bottom",
             end: "bottom top",
             scrub: true
         },
@@ -310,43 +310,43 @@ function initAudioPlayer() {
         {
             title: "Regálame tu Amor",
             artist: "Walter Flores",
-            art: "/public/WhatsApp Image 2026-07-01 at 8.17.10 AM.jpeg",
-            url: "/public/Regalame tu amor - Walter Flores.mp3",
+            art: "/WhatsApp Image 2026-07-01 at 8.17.10 AM.jpeg",
+            url: "/Regalame tu amor - Walter Flores.mp3",
             chordProgressions: [[220, 261, 329, 440], [293, 349, 440, 587], [196, 246, 293, 392], [261, 329, 392, 523]]
         },
         {
             title: "En el Contestador",
             artist: "Walter Flores",
-            art: "/public/Pulsaressalsa portada.png",
-            url: "/public/1 EN EL CONTESTADOR.mp3.mpeg",
+            art: "/Pulsaressalsa portada.png",
+            url: "/1 EN EL CONTESTADOR.mp3.mpeg",
             chordProgressions: [[220, 261, 329, 440], [293, 349, 440, 587], [196, 246, 293, 392], [261, 329, 392, 523]]
         },
         {
             title: "Todo Comenzó para Siempre",
             artist: "Walter Flores",
-            art: "/public/Pulsaressalsa portada.png",
-            url: "/public/2 TODO COMENZO PARA SIEMPRE.mp3.mpeg",
+            art: "/Pulsaressalsa portada.png",
+            url: "/2 TODO COMENZO PARA SIEMPRE.mp3.mpeg",
             chordProgressions: [[220, 261, 329, 440], [293, 349, 440, 587], [196, 246, 293, 392], [261, 329, 392, 523]]
         },
         {
             title: "Embustera",
             artist: "Walter Flores",
-            art: "/public/Pulsaressalsa portada.png",
-            url: "/public/3 EMBUSTERA.mp3.mpeg",
+            art: "/Pulsaressalsa portada.png",
+            url: "/3 EMBUSTERA.mp3.mpeg",
             chordProgressions: [[220, 261, 329, 440], [293, 349, 440, 587], [196, 246, 293, 392], [261, 329, 392, 523]]
         },
         {
             title: "Diosa del Mar",
             artist: "Walter Flores",
-            art: "/public/Pulsaressalsa portada.png",
-            url: "/public/4 DIOSA DEL MAR.mp3 (1).mpeg",
+            art: "/Pulsaressalsa portada.png",
+            url: "/4 DIOSA DEL MAR.mp3 (1).mpeg",
             chordProgressions: [[220, 261, 329, 440], [293, 349, 440, 587], [196, 246, 293, 392], [261, 329, 392, 523]]
         },
         {
             title: "Mirar al Cielo",
             artist: "Walter Flores",
-            art: "/public/Pulsaressalsa portada.png",
-            url: "/public/5 MIRAR AL CIELO.mp3.mpeg",
+            art: "/Pulsaressalsa portada.png",
+            url: "/5 MIRAR AL CIELO.mp3.mpeg",
             chordProgressions: [[220, 261, 329, 440], [293, 349, 440, 587], [196, 246, 293, 392], [261, 329, 392, 523]]
         }
     ];

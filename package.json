@@ -4,7 +4,7 @@
   "private": true,
   "description": "Sitio oficial de Walter Flores",
   "scripts": {
-    "dev": "npx --yes serve .",
-    "start": "npx --yes serve ."
+    "dev": "npx --yes serve public",
+    "start": "npx --yes serve public"
   }
 }
