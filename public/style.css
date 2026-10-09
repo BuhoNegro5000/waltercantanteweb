@@ -2584,11 +2584,33 @@ img {
     box-shadow: 0 0 10px rgba(212,175,55,0.15);
 }
 
-.copyright {
-    font-size: 11px;
-    color: var(--text-muted);
-    line-height: 1.5;
-}
+  .copyright {
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  }
+
+  .site-credit {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 5px;
+  margin-top: 14px;
+  color: var(--text-muted);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  transition: var(--transition-premium);
+  }
+
+  .site-credit strong {
+  color: var(--gold-solid);
+  font-weight: 700;
+  }
+
+  .site-credit:hover {
+  color: var(--text-white);
+  transform: translateY(-2px);
+  }
+
 
 @media (max-width: 991px) {
     .footer-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
