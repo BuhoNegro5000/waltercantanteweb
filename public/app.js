@@ -820,30 +820,44 @@ function initVideoSlider() {
         slider.scrollBy({ left: 340, behavior: 'smooth' });
     });
 
-    // Opening Video Lightbox (Supports both YouTube embed links and local MP4 files)
-    const videoCards = document.querySelectorAll(".video-card");
-    videoCards.forEach(card => {
-        card.addEventListener("click", () => {
-            const url = card.getAttribute("data-video-url");
-            
-            if (url.toLowerCase().endsWith(".mp4") || url.toLowerCase().includes("")) {
-                // Play local video using HTML5 video player
-                lightboxIframe.style.display = "none";
-                lightboxVideo.style.display = "block";
-                lightboxVideo.src = url;
-                lightboxVideo.load();
-                lightboxVideo.play();
-            } else {
-                // Play YouTube video using Iframe player
-                lightboxVideo.style.display = "none";
-                lightboxIframe.style.display = "block";
-                lightboxIframe.src = `${url}?autoplay=1&modestbranding=1&rel=0`;
-            }
-            
-            videoLightbox.classList.add("active");
-            document.body.style.overflow = "hidden"; // lock page scroll
-        });
-    });
+  // Open only verified sources and keep unsupported media from producing unhandled errors.
+  const videoCards = document.querySelectorAll(".video-card");
+  videoCards.forEach(card => {
+  card.addEventListener("click", () => {
+  const url = card.getAttribute("data-video-url")?.trim();
+  if (!url) return;
+  
+  if (/\.mp4(?:$|\?)/i.test(url)) {
+  lightboxIframe.style.display = "none";
+  lightboxVideo.style.display = "block";
+  lightboxVideo.pause();
+  lightboxVideo.removeAttribute("src");
+  lightboxVideo.load();
+  lightboxVideo.src = url;
+  lightboxVideo.load();
+  lightboxVideo.play().catch(() => {
+  lightboxVideo.pause();
+  });
+  } else {
+  lightboxVideo.pause();
+  lightboxVideo.removeAttribute("src");
+  lightboxVideo.load();
+  lightboxVideo.style.display = "none";
+  lightboxIframe.style.display = "block";
+  lightboxIframe.src = `${url}${url.includes("?") ? "&" : "?"}autoplay=1&modestbranding=1&rel=0`;
+  }
+  
+  videoLightbox.classList.add("active");
+  document.body.style.overflow = "hidden";
+  });
+  });
+
+  lightboxVideo.addEventListener("error", () => {
+  lightboxVideo.pause();
+  lightboxVideo.removeAttribute("src");
+  lightboxVideo.style.display = "none";
+  lightboxIframe.style.display = "block";
+  });
 
     // Closing handlers
     function closeVideo() {
