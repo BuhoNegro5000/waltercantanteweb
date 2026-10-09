@@ -936,15 +936,26 @@ function initForms() {
     const resetContactBtn = document.getElementById("reset-contact-btn");
 
     if (bookingForm) {
-        bookingForm.addEventListener("submit", (e) => {
-            e.preventDefault();
-            
-            const submitBtn = bookingForm.querySelector("button[type='submit']");
-            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Procesando Solicitud...';
-            submitBtn.disabled = true;
+  bookingForm.addEventListener("submit", (e) => {
+  e.preventDefault();
 
-            // This static site confirms the request locally without a backend endpoint.
-            setTimeout(() => {
+  const formData = new FormData(bookingForm);
+  const submitBtn = bookingForm.querySelector("button[type='submit']");
+  const requestMessage = [
+  `Hola Walter, quiero solicitar una reserva.`,
+  `Nombre: ${formData.get("name") || "No indicado"}`,
+  `Correo: ${formData.get("email") || "No indicado"}`,
+  `Empresa/Productora: ${formData.get("company") || "No indicada"}`,
+  `Tipo de evento: ${formData.get("event-type") || "No indicado"}`,
+  `Ciudad y país: ${formData.get("location") || "No indicado"}`,
+  `Detalles: ${formData.get("message") || "No indicados"}`
+  ].join("\\n");
+
+  submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Abriendo WhatsApp...';
+  submitBtn.disabled = true;
+  window.location.href = `https://wa.link/j0bcev?text=${encodeURIComponent(requestMessage)}`;
+  
+  setTimeout(() => {
                 if (typeof gsap !== "undefined") {
                     gsap.to(bookingForm, { opacity: 0, duration: 0.4, display: "none" });
                 } else {

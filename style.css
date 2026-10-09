@@ -2108,6 +2108,45 @@ img {
     flex-direction: column;
 }
 
+.contact-socials {
+    position: relative;
+    z-index: 1;
+    margin-top: 38px;
+    padding-top: 26px;
+    border-top: 1px solid rgba(255, 94, 58, 0.18);
+}
+
+.contact-social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.contact-social-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 12px;
+    border: 1px solid rgba(0, 176, 255, 0.22);
+    border-radius: 999px;
+    color: var(--text-gray);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.contact-social-links a:hover {
+    color: var(--text-white);
+    border-color: var(--gold-solid);
+    background: rgba(255, 94, 58, 0.08);
+    transform: translateY(-2px);
+}
+
+.contact-social-links i {
+    color: var(--gold-solid);
+    font-size: 15px;
+}
+
 .item-label {
     font-size: 11px;
     font-weight: 700;
@@ -2275,6 +2314,59 @@ img {
 
 @media (max-width: 576px) {
     .form-row-two { grid-template-columns: 1fr; gap: 0; }
+}
+
+/* Contacto: panel cálido y legible sobre el fondo claro */
+.booking-section {
+    background: linear-gradient(180deg, #fffaf4 0%, #f5eee5 100%);
+    position: relative;
+}
+
+.booking-section .section-subtitle {
+    color: #5f5147;
+}
+
+.info-card-premium,
+.luxury-form {
+    background: rgba(255, 255, 255, 0.92);
+    border-color: rgba(255, 94, 58, 0.28);
+    box-shadow: 0 20px 45px rgba(82, 54, 34, 0.12);
+}
+
+.luxury-form .form-group-glow input,
+.luxury-form .form-group-glow textarea,
+.luxury-form .form-group-glow select {
+    color: #1a1817;
+    border-bottom-color: rgba(95, 81, 71, 0.28);
+}
+
+.luxury-form .form-group-glow input::placeholder,
+.luxury-form .form-group-glow textarea::placeholder {
+    color: transparent;
+}
+
+.map-landmasses path {
+    fill: rgba(0, 176, 255, 0.08);
+    stroke: rgba(0, 119, 255, 0.28);
+    stroke-width: 2;
+    stroke-linejoin: round;
+}
+
+.svg-map-wrapper {
+    background: linear-gradient(145deg, #f4fbff 0%, #fff8f0 100%);
+    border-color: rgba(0, 176, 255, 0.28);
+    box-shadow: 0 22px 50px rgba(0, 119, 255, 0.1);
+}
+
+.world-svg-map {
+    min-height: 360px;
+}
+
+.map-city-label {
+    paint-order: stroke;
+    stroke: rgba(250, 247, 242, 0.9);
+    stroke-width: 4px;
+    stroke-linejoin: round;
 }
 
 /* ==========================================================================
