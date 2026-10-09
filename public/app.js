@@ -23,7 +23,7 @@ function initHeroVideo() {
     const heroVideo = document.getElementById("hero-bg-video");
     if (!heroVideo) return;
 
-    heroVideo.src = "/waltervideo.mp4";
+    heroVideo.src = "/REGALAME TU AMOR - WALTER FLORES.mp4";
     heroVideo.muted = true;
     heroVideo.loop = true;
     heroVideo.playsInline = true;
