@@ -23,11 +23,9 @@ function initHeroVideo() {
     const heroVideo = document.getElementById("hero-bg-video");
     if (!heroVideo) return;
 
-    heroVideo.src = "/REGALAME TU AMOR - WALTER FLORES.mp4";
     heroVideo.muted = true;
     heroVideo.loop = true;
     heroVideo.playsInline = true;
-    heroVideo.load();
 
     const startPlayback = () => {
         heroVideo.play().catch(() => {
@@ -35,11 +33,22 @@ function initHeroVideo() {
         });
     };
 
+    const loadHeroVideo = () => {
+        if (heroVideo.src) return;
+        heroVideo.src = heroVideo.dataset.src;
+        heroVideo.load();
+    };
+
     heroVideo.addEventListener("canplay", startPlayback, { once: true });
     heroVideo.addEventListener("error", () => {
         heroVideo.classList.add("video-fallback-active");
     }, { once: true });
-    startPlayback();
+
+    if ("requestIdleCallback" in window) {
+        window.requestIdleCallback(loadHeroVideo, { timeout: 1800 });
+    } else {
+        window.setTimeout(loadHeroVideo, 1200);
+    }
 }
 
 /* ==========================================================================
