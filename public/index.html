@@ -3,17 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Walter Flores | Sitio Oficial | Cantante Argentino</title>
-    
-    <!-- SEO Optimization -->
-    <meta name="description" content="Sitio oficial de Walter Flores, la voz de la pasión y la nostalgia argentina para el mundo. Escucha su música, mira sus videos y conoce su trayectoria internacional.">
-    <meta name="keywords" content="Walter Flores, Walter Flores cantante, Walter Flores Argentina, Cantante argentino, Música argentina, Argentine singer, Latin singer, tango, folclore, baladas">
+    <meta name="theme-color" content="#FAF7F2">
+    <title>Walter Flores | Sitio Oficial — Cantante Argentino</title>
+    <meta name="description" content="Sitio oficial de Walter Flores, cantante argentino. Descubre su música, videos, trayectoria y próximas presentaciones. Contrataciones y contacto oficial.">
+    <meta name="twitter:image:alt" content="Walter Flores, cantante argentino">
     <meta name="author" content="Walter Flores">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="googlebot" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://www.waltercantante.com/">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon-512.png?v=1" type="image/png" sizes="512x512">
+    <link rel="apple-touch-icon" href="/favicon-512.png?v=1" sizes="512x512">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+    <meta property="og:locale" content="es_AR">
+    <meta property="og:site_name" content="Walter Flores">
     <meta property="og:title" content="Walter Flores | Sitio Oficial">
-    <meta property="og:description" content="De Argentina para el Mundo. Experimenta el universo musical del cantante argentino Walter Flores.">
-    <meta property="og:type" content="music.musician">
-    <meta property="og:image" content="/WhatsApp Image 2026-07-01 at 8.26.00 AM.jpeg">
+    <meta property="og:description" content="Música, videos y trayectoria artística de Walter Flores. Sitio oficial del cantante argentino.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.waltercantante.com/">
+    <meta property="og:image" content="https://www.waltercantante.com/WhatsApp%20Image%202026-07-01%20at%208.26.00%20AM.jpeg">
+    <meta property="og:image:alt" content="Walter Flores, cantante argentino">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Walter Flores | Sitio Oficial">
+    <meta name="twitter:description" content="Música, videos y trayectoria artística de Walter Flores.">
+    <meta name="twitter:image" content="https://www.waltercantante.com/WhatsApp%20Image%202026-07-01%20at%208.26.00%20AM.jpeg">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Walter Flores",
+      "url": "https://www.waltercantante.com/",
+      "jobTitle": "Cantante",
+      "image": "https://www.waltercantante.com/WhatsApp%20Image%202026-07-01%20at%208.26.00%20AM.jpeg",
+      "sameAs": [
+        "https://www.youtube.com/@walter.cantante",
+        "https://www.instagram.com/walter.furor",
+        "https://www.tiktok.com/@walter.furor",
+        "https://open.spotify.com/intl-es/artist/1IRdHd84a5ygMAioqKN61v",
+        "https://music.apple.com/us/artist/walter-flores/1603522104"
+      ]
+    }
+    </script>
 
     <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,7 +53,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css?v=3.1">
+    <link rel="stylesheet" href="style.css?v=4.1">
 </head>
 <body>
 
@@ -64,6 +95,11 @@
                     <li><a href="#contacto" class="nav-btn">Contrataciones</a></li>
                 </ul>
             </nav>
+
+            <div class="language-switcher" role="group" aria-label="Selector de idioma">
+                <button type="button" data-language="es" aria-label="Cambiar idioma a español" aria-pressed="true">ES</button>
+                <button type="button" data-language="en" aria-label="Cambiar idioma a inglés" aria-pressed="false">EN</button>
+            </div>
 
             <button class="mobile-toggle" aria-label="Abrir Menú" id="mobile-toggle">
                 <span class="bar"></span>
@@ -733,7 +769,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <!-- Vercel Web Analytics: compatible con este sitio estático -->
     <script src="/_vercel/insights/script.js" defer></script>
+    <!-- Static-site language selector and translations -->
+    <script src="/i18n.js?v=4.1"></script>
     <!-- Custom Application Logic -->
-    <script src="app.js?v=3.1"></script>
+    <script src="/app.js?v=4.0"></script>
 </body>
 </html>

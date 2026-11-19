@@ -317,14 +317,54 @@ img {
     line-height: 1.1;
 }
 
-.logo-subtitle {
+ .logo-subtitle {
     font-family: var(--font-body);
     font-size: 8px;
     font-weight: 700;
     letter-spacing: 2px;
     color: var(--argentine-blue);
     margin-top: 2px;
+  }
+
+.language-switcher {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    padding: 3px;
+    border: 1px solid rgba(26, 24, 23, 0.16);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.72);
+    flex: 0 0 auto;
 }
+
+.language-switcher button {
+    min-width: 36px;
+    min-height: 32px;
+    padding: 0 8px;
+    border-radius: 999px;
+    color: var(--text-gray);
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.language-switcher button[aria-pressed="true"] {
+    background: var(--gold-solid);
+    color: var(--text-on-dark);
+}
+
+.language-switcher button:focus-visible {
+    outline: 2px solid var(--argentine-blue);
+    outline-offset: 2px;
+}
+
+@media (max-width: 380px) {
+    .header-container { padding: 16px; }
+    .logo-name { font-size: 18px; letter-spacing: 2px; }
+    .language-switcher button { min-width: 32px; min-height: 30px; padding: 0 6px; }
+}
+
 
 .nav-menu ul {
     list-style: none;
@@ -2755,9 +2795,44 @@ img {
     .lightbox-close { top: -40px; right: 10px; }
 }
 
-/* ==========================================================================
-   SCROLL TRIGGERS & REVEAL CLASSES
-   ========================================================================== */
+.language-switcher {
+    display: inline-flex;
+    align-items: center;
+    flex: 0 0 auto;
+    gap: 2px;
+    padding: 3px;
+    border: 1px solid rgba(212, 175, 55, 0.38);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.language-switcher button {
+    min-width: 34px;
+    min-height: 30px;
+    padding: 0 8px;
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    color: var(--text-gray);
+    font: inherit;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    transition: var(--transition-premium);
+}
+
+.language-switcher button[aria-pressed="true"] {
+    background: var(--gold-solid);
+    color: #151515;
+}
+
+.language-switcher button:focus-visible {
+    outline: 2px solid var(--argentine-blue);
+    outline-offset: 2px;
+}
+
+/* ==========================================================================\n   SCROLL TRIGGERS & REVEAL CLASSES\n   ========================================================================== */
 .reveal-up {
     opacity: 0;
     transform: translateY(40px);
