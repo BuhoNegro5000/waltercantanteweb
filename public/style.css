@@ -979,6 +979,7 @@ img {
     height: 100%;
     object-fit: cover;
     object-position: center;
+    filter: brightness(0.58) contrast(1.08);
 }
 
 .music-universe-caption {
@@ -1986,6 +1987,53 @@ img {
 
 @media (max-width: 768px) {
     .video-card { width: 280px; }
+}
+
+@media (max-width: 480px) {
+    .videos-section .header-flex {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 14px;
+        margin-bottom: 20px;
+    }
+
+    .videos-section .section-title {
+        font-size: clamp(30px, 10vw, 36px);
+        line-height: 1.15;
+    }
+
+    .videos-section .slider-arrows {
+        justify-content: flex-end;
+    }
+
+    .videos-section .netflix-slider-outer {
+        width: calc(100% + 48px);
+        margin-left: -24px;
+        padding: 10px 24px 30px;
+        scroll-snap-type: x mandatory;
+        scroll-padding-inline: 24px;
+    }
+
+    .videos-section .netflix-slider-inner {
+        gap: 16px;
+        padding-right: 24px;
+    }
+
+    .videos-section .video-card {
+        width: min(380px, calc(100vw - 48px));
+        flex: 0 0 min(380px, calc(100vw - 48px));
+        scroll-snap-align: start;
+    }
+
+    .videos-section .video-details {
+        padding: 16px;
+    }
+
+    .videos-section .video-desc {
+        font-size: 14px;
+        line-height: 1.5;
+        overflow-wrap: anywhere;
+    }
 }
 
 /* ==========================================================================
