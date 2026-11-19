@@ -1483,6 +1483,49 @@ img {
     background-color: var(--bg-dark);
 }
 
+.tour-section-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.argentina-flag {
+    width: 42px;
+    height: 28px;
+    display: inline-flex;
+    flex-direction: column;
+    flex: 0 0 auto;
+    overflow: hidden;
+    border: 1px solid rgba(26, 24, 23, 0.12);
+    border-radius: 3px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.argentina-flag span {
+    position: relative;
+    display: block;
+    flex: 1;
+    background: #74ACDF;
+}
+
+.argentina-flag span:nth-child(2) {
+    background: #FFFFFF;
+}
+
+.argentina-flag span:nth-child(2)::after {
+    content: '';
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    background: #F6B40E;
+    transform: translate(-50%, -50%);
+}
+
 .map-interactive-container {
     position: relative;
     width: 100%;
